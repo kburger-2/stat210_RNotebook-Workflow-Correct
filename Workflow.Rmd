@@ -1,0 +1,91 @@
+---
+title: "R Notebook:Workflow (Ch. 4, 6, 8)"
+output: html_notebook
+---
+
+##Chapter 4: Workflow Basic
+We can use R as a calcuator:
+```{r}
+(1/200*30)
+```
+
+We can create objects and assignments with <-
+```{r}
+(x<-3*4)
+```
+
+```{r}
+this_is_a_really_long_name <- 2.5
+this_is_a_really_long_name
+```
+
+```{r}
+r_rocks <- 2^3
+```
+
+R is case sensitive and typos matter
+
+Looking at functions  
+>You can start typing a funtion then press tab to show possible completions as well as listing the function's arguments and purpose.
+
+```{r}
+seq(1, 10)
+```
+
+```{r}
+x <- "hello world"
+```
+
+Add () around a funcion to "print to screen" the answer
+```{r}
+(y <- seq(1, 10, length.out = 5))
+```
+
+Look at all your objects in the environment tab
+
+###Practice
+
+1. This code does not work because the i in the second line of code does not match the line above.
+2. Fix the code
+```{r}
+library(tidyverse)
+
+ggplot(data = mpg)  
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+```
+
+3. Alt + Shift + K opens up a shortcuts menu.
+
+---
+
+##Chapter 6: Workflow Scripts
+
+Open an R script file to give yourself more room when working with more complex graphics  
+> Use Cmd/Ctl + Enter to execute the current R expression in the console  
+> Use Cmd/Ctl + Shift + S to execute the complete script in one step
+
+###Practice
+1. In the upper right hand corner of the rmd file you can click on "Show document outline" and see all the headings and outline of your document
+2. The RStudio diagnostics will report missing arguments, warn if variable has no definition in scope, warn is variable is defined but not used, provide R style diagnostics, and many other errors.
+
+---
+
+##Chapter 8: Workflow Projects
+
+You should instruct RStudio not to preserve your workspace between sessions, and use these shortcuts instead
+1. Press Cmd/Ctrl + Shift + F10 to restart RStudio.
+2. Press Cmd/Ctrl + Shift + S to rerun the current script.
+
+RStudio shows your current working directory at the top of the console and you can print it out by running getwd()
+```{r}
+getwd()
+```
+
+###Summary  
+>Create an RStudio project for each data analysis project  
+>Keep data files there  
+>Keep scripts there; edit them, run them in bits or as a whole  
+>Save your outputs (plots and cleaned data) there  
+>Only ever use relative paths, not absolute paths
